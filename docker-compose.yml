@@ -24,7 +24,7 @@ services:
     networks:
       - grafana
     ports:
-      - "3000:3000"
+      - "3009:3000"
     environment:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -45,5 +45,6 @@ services:
       - "6565:6565"
     environment:
       - K6_OUT=influxdb=http://influxdb:8086/k6
+      - MAC_HOST = docker.for.mac.host.internal
     volumes:
       - ./scripts:/scripts
