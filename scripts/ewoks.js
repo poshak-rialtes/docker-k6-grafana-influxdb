@@ -70,9 +70,23 @@ export const options = {
 
 };
 
+//Test Springboot App
+// export default function () {
+//   const response = http.get("http://docker.for.mac.host.internal:8082/webhook/");
+//   check(response, 
+//     { "status is 200": (r) => r.status === 200,
+//      "text verification" : (r) => r.body.includes("Hello World This is poshak") }
+//     );
+//   sleep(.300);
+// };
 
+
+//Test Fast API Fulfillment Application
 export default function () {
-  const response = http.get("http://docker.for.mac.host.internal:8082/webhook/");
-  check(response, { "status is 200": (r) => r.status === 200 });
+  const response = http.get("http://docker.for.mac.host.internal:5050/");
+  check(response, 
+    { "status is 200": (r) => r.status === 200,
+     "text verification" : (r) => r.body.includes("Hello Poshak Jaiswal this is a test ") }
+    );
   sleep(.300);
 };
